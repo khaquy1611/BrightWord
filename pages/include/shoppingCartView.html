@@ -1,0 +1,57 @@
+<div class="cart-review" style="">
+	<div class="glyphicon glyphicon-remove pull-right" id="shopping-cart-btn-out" style="font-size: 20px;cursor: pointer"></div>
+	<h3 class="text-center">Shopping Cart View</h3>
+	<hr>
+	<div class="" ng-if="carts.length">
+		<div class="media" ng-repeat="ca in carts track by $index">
+			<a class="pull-left" href="">
+				<img class="media-object" width="80px" ng-src="imgs/products/{{ca.img_folder}}/{{ca.img[0]}}.png" alt="Image">
+			</a>
+			<div class="media-body">
+				<p class="media-heading" id="media-cart-parent"><span id="name-media-heading"><a href="#!product_detail" style="text-decoration: none; color:black">{{ca.name}}</a></span><span ng-click="remove_cart(ca.id)"  class="remove-item-cart-freeview glyphicon glyphicon-remove pull-right"></span>
+				<p>
+				<p style="border-top: 1px dashed #dae0e5;display: flex; align-items: center">
+					<span class="numbercart" style="color: red;line-height: 40px">$ {{ca.price}}</span> &#160 x &#160 <b><span style="font-size: 16px; line-height: 40px;">{{ca.quantity}}</span></b> &#160 = &#160 <span>$ {{ca.quantity*ca.price | currency:"":2}}</span></p>
+			
+			</div>
+		</div>
+	</div>
+	<div class="text-center" ng-if="!carts.length" style="margin-top:20px">
+		Giỏ hàng rỗng
+	</div>	
+	<hr>
+	
+
+	<hr style="border: 2px solid red;color:red;margin: 5px 0px">
+	<div class="total_cart_preview" style="padding: 10px;color:red">
+		<h3 style="color: red;text-align: center">Total</h3>
+		<h4>Num: <span>{{total_qtt}}</span></h4>
+		<h4>Price: $ <span>{{total_money | currency:"":2}}</span></h4>
+	</div>
+	<div style="width: 200px;margin: 0 auto">
+		<a  href="#!list-cart" class="btn btn-info" style="background-color: #cda557; padding: 7px 14px;border: none; line-out">View Cart</a>
+		<a href="#!checkout" ng-if="carts.length" class="btn btn-success" >Buy now</a>
+	</div>
+</div>
+<script>	
+
+
+	// begin Shopping cartview
+	$(document).ready(function() {
+		$('.shopping-cart-btn-in').click(function(event) {
+			$('.cart-review').css('transform', 'translateX(0)');
+		});
+
+		$('#shopping-cart-btn-out').click(function(event) {
+			$('.cart-review').css('transform', 'translateX(100%)');
+		});
+        
+
+  
+	});
+
+
+
+// end Shopping cartview
+
+</script>

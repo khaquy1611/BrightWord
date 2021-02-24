@@ -1,0 +1,125 @@
+		<!-- =========================================== -->
+		<!-- begin banner title -->
+		<div class="banner-title">
+			<h3 class="text-center banner-title-text">Contact</h3>
+		</div>
+		<!-- end banner title -->
+
+		<main class="main-index">
+			<!-- begin main contact -->
+			<div class="content">
+				<div class="main-contact">
+					<div class="container-fluid">
+						<!-- begin main contact Information -->
+						<div class="col-md-4">
+							<h1>Contact Information</h1>
+							<p><b>Company Name :</b> bachkhoa Aptech</p>
+							<p><b>Email :</b> vungka321@gmail.com</p>
+							<p><b>Phone :</b> (+84)123 456 7890</p>
+							<p><b>Address :</b> No 238, Hoang Quoc Viet, Cau Giay, Ha Noi.</p>
+						</div>
+						<!-- end main contact Information -->
+
+						<!-- begin main contact -->
+						<div class="col-md-8">
+							<h1 style="padding-left: 22px;">Contact</h1>
+							<!-- begin form contact -->
+							<form action="" method="POST" role="form" id="form-contact">
+
+								<div class="container-fluid">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="">Name</label>
+											<input type="text" class="form-control" name="name" placeholder="Your name">
+
+										</div>
+										<div class="form-group">
+											<label for="">Email</label>
+											<input type="email" class="form-control" name="email" placeholder="Your email">
+
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="">Phone</label>
+											<input type="text" class="form-control" name="phone" placeholder="Your phone">
+
+										</div>
+										<div class="form-group">
+											<label for="">Address</label>
+											<input type="text" class="form-control" name="address" placeholder="Your address">
+
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group content-txtx">
+											<label for="">Content</label>
+											<textarea name="content" class="form-control content-contact1" rows="5" placeholder="Message..."></textarea>
+										</div>
+
+										<div class="submit_send">
+											<button type="submit" class="btn">Send Messenger</button>
+										</div>
+									</div>
+								</div>								
+							</form>
+							<!-- begin form contact -->
+						</div>
+						<!-- begin main contact Info -->
+					</div>
+				</div>	
+			</div>
+			<div class="clearfix"></div>
+			<hr>
+			<!-- begin gogoog map big -->
+			<div class="col-md-12 maps">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.6576008139!2d105.78126221488364!3d21.046381985988834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab32dd484c53%3A0x4201b89c8bdfd968!2zMjM4IEhvw6BuZyBRdeG7kWMgVmnhu4d0LCBD4buVIE5odeG6vywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1573572308848!5m2!1svi!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+			</div>
+			<!-- end gogoog map big -->
+			<div class="clearfix"></div>
+			<!-- begin main contact -->
+		</main>
+
+		<script type="text/javascript">
+
+// =====================================================
+// begin JS validate form contact
+$('#form-contact').validate({
+	rules:{
+		name:{
+			required:true
+		},
+		email:{
+			required:true
+		},
+		phone:{
+			required:true
+		},
+		address:{
+			required: true
+		},
+		content:{
+			required: true
+		}
+	},
+	messages:{
+		name:{
+			required:"This field is required"
+		},
+		email:{
+			required:"This field is required",
+			email:"Incorrect email format ( demo@gmail.com )"
+		},
+		phone:{
+			required:"This field is required"
+		},
+		address:{
+			required:"This field is required"
+		},
+		content:{
+			required:"This field is required"
+		}
+	}
+});
+// end JS validate form contact
+</script>

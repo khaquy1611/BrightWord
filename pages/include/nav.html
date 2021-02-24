@@ -1,0 +1,30 @@
+<div style="">
+    <div class="content">
+
+        <nav class='header_nav nav-bar_header'>
+
+            <ul class="ul1">
+                <li class="li1"><a class="a1" href="#!" target="_self" >HOME</a></li>
+                <li class="li1"><a class="a1" href="#!product" target="_self">PRODUCT</a></li>
+                <li class="li1"><a class="a1" href="">CATEGORY</a>
+                    <ul>
+                        <li ng-repeat="c in cate"><a href="#!product"><i class="fas fa-angle-right"></i> {{c.name}}</a></li>
+                    </ul>
+                </li>
+                <li class="li1"><a class="a1" href="#!about" target="_self">ABOUT US</a></li>
+                <li class="li1"><a class="a1" href="#!blog" target="_self">BLOG</a></li>
+                <li><a class="a1" href="#!contact" target="_self">CONTACT</a></li>
+            </ul>
+            <div class="nav-right">
+                <form action="">
+                    <input type="text" placeholder="Enter key words.....">
+                    <a href=""><i class="fas fa-search"></i></a>
+                </form>
+
+                <span onclick="mobile_button()" class="mobile-button">
+				<i class="fas fa-bars"></i>
+			</span>
+            </div>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+<div class="content">
+    <div class="login-container" ng-controller="LoginCtrl" ng-show="!std.id">
+        <div class="container-fluid">
+            <div class="col-md-4 col-md-offset-4 content-login">
+
+                <h2 class="text-center"><b class="b-text-login">Welcome</b></h2>
+                <!-- begin form login -->
+                <div class="alert alert-danger" ng-show="alert">
+                    <strong>{{alert}}</strong>
+                </div>
+                <form action="" method="POST" role="form" id="form-login">
+                    <div class="form-group form-group1">
+                        <label for="">Email</label>
+                        <input type="email" class="form-control form-input1" name="email" ng-model="email" placeholder="Enter your Email...">
+                        
+                    </div>
+                    <div class="form-group form-group1">
+                        <label for="">Password</label>
+                        <input type="password" id="password" class="form-control form-input1" name="password" ng-model="password" placeholder="Enter your password...">
+                        
+                        <span onclick="showhide()" style="cursor: pointer;"><i class="fa fa-eye" id="icon-eye"></i></span>
+                    </div>
+
+                    <div class="checkbox pull-left" style="margin-top:0px">
+                        <label>
+                            <input type="checkbox" value="1" checked> Save password
+                        </label>
+                    </div>
+                    <div class="pull-right text">
+                        Forgot password? <a href="">Sign up</a>
+                    </div>
+
+                    <div class="submit-login">
+                        <button id="submit-login-a" type="button" class="btn-submit" ng-click="login()">Sign In</button>
+                    </div>
+                </form>
+                <!-- end form login -->
+
+                <!-- ----------------- -->
+
+                <!-- begin login with facebook, google -->
+
+                <div class="login-face-google">
+                    <div class="col-md-6 col-lg-6 fago1 social-btn">
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i>Sign with Facebook</a>
+                    </div>
+                    <div class="col-md-6 col-lg-6 fago2 social-btn">
+                        <a href="https://www.google.com.vn/"><i class="fab fa-google-plus-g"></i></i>Sign with Google</a>
+                    </div>
+                </div>
+
+                <!-- end login with facebook, google -->
+
+                <!-- -------------- -->
+                <!-- begin Registration account login -->
+                <div class="registration-login">
+                    <div class="col-md-12">
+                        <p class="text-center">Do not have an account? <a href="signup.html"> Sign up now</a></p>
+                    </div>
+                </div>
+                <!-- End Registration account login -->
+            </div>
+        </div>
+    </div>
+</div>           
+
+
+<script>
+    $('#form-login').validate({
+        rules:{
+            email:{
+                required:true
+            },
+            password:{
+                required: true
+            }
+        },
+        messages:{
+            email:{
+                required:"This field is required",
+                email:"Incorrect email format (Eg: demo@gmail.com )"
+            },
+            password:{
+                required:"This field is required"
+            }
+        }
+    });
+
+    isBoll = true;
+    function showhide(){
+        if (isBoll) {
+          document.getElementById("password").setAttribute("type", "text");
+          document.getElementById("icon-eye").setAttribute("class", "fas fa-eye-slash");
+          isBoll = false;
+      } else {
+          document.getElementById("password").setAttribute("type", "password");
+          document.getElementById("icon-eye").setAttribute("class", "fa fa-eye");
+          isBoll = true;
+      }
+  }
+
+</script>

@@ -1,0 +1,52 @@
+
+<div class="nav-bar header-nav nav-top">
+	<div ng-include="'pages/include/nav.html'"></div>
+</div>
+
+<nav class="mobile-nav" id="mobile_nav" style="z-index:10000">
+	<div class="mobile-nav-logo">
+		<img src="image/banner/logo.png" alt="" height="40px">
+	</div>
+	<div class="mobile-nav-exit" id="mobile_nav_exit">
+		<i class="fas fa-times"></i>
+	</div>
+	<hr class="mobile-hr">
+	<div class="mobile-menu">
+		<div class="mobile-menu-header">
+			<a href="#!" target="_self">Home</a>
+			<i class="fas icon-mobile-menu fa-angle-right"></i>
+		</div>
+		<div class="mobile-menu-header">
+			<a href="#!product" target="_self">Product</a>
+			<i class="fas icon-mobile-menu fa-angle-right"></i>
+		</div>
+		<div class="mobile-menu-header" href="#hoptac" data-toggle="collapse" onclick="mobile1(mobile_icon_3)">
+			<a>Category</a>
+			<i id="mobile_icon_3" class="fas icon-mobile-menu fa-angle-right"></i>
+		</div>
+		<div id="hoptac" class="collapse">
+			<ul>
+				<li ng-repeat="c in cate"><a href="#!product"><i class="fas fa-angle-right"></i> {{c.name}}</a></li>
+			</ul>
+		</div>
+		<div class="mobile-menu-header">
+			<a href="#!about" target="_self">ABOUT US</a>
+			<i class="fas icon-mobile-menu fa-angle-right"></i>
+		</div>
+		<div class="mobile-menu-header">
+			<a href="#!blog" target="_self">BLOG</a></li>
+			<i class="fas icon-mobile-menu fa-angle-right"></i>
+		</div>
+		<div class="mobile-menu-header">
+			<a href="#!contact" target="_self">CONTACT</a>
+			<i class="fas icon-mobile-menu fa-angle-right"></i>
+		</div>
+	</div>
+</nav>
+<script>
+	mobile_nav_exit.onclick = function () {
+		mobile_nav.style.opacity = '0';
+		mobile_nav.style.right = '-300px';
+		check = 0;
+	}
+</script>

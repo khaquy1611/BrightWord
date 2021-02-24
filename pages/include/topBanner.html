@@ -1,0 +1,49 @@
+
+<div class="header-navbar">
+	<div class="content" style="">
+
+		<div class="container-fluid no-padding">
+			<div class="navbar header-top-navbar">
+
+				<div class="logo">
+					<a class="navbar-brand" href="index.html">
+						<img src="image/banner/logo.png"  class="img_logo img-responsive" alt="">
+					</a>
+				</div>
+
+				<ul class="navbar-right-icon" style="margin: 0">
+					<li ><p ng-hide="!std.id"  style="font-size: 17px;">{{std.name}}</p></li>
+					<li class="user">
+						<a href="" style="text-decoration: none;color:black"><ion-icon name="person-outline" size="large"></a>
+						<div class="collapse-user">
+							<div class="content-colapse">
+								<ul class="collapse-list">
+
+									<li ng-show="!std.id">
+										<i class="fa fa-lock i"></i><a href="#!signup" >Sign up</a>
+									</li>
+									<li ng-show="!std.id">
+										<i class="fa fa-user i"></i><a href="#!login">Login</a>
+									</li>
+
+									<li ng-hide="!std.id" ng-click ="thoat()">
+										<i class="fa fa-trash i"></i><a href="">Logout</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="heart">
+						<a href="#!list-favorite"><ion-icon name="heart-outline" size="large"></ion-icon> </a>
+						<span class="count">{{prodinFavirite.length}}</span>
+					</li>
+					<li class="shopping-cart-btn-in">
+						<a href="#!list-cart"><ion-icon name="cart-outline" size="large"></ion-icon></a>
+						<span class="count">{{total_qtt}}</span>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</div>

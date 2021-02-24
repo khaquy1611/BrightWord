@@ -1,0 +1,20 @@
+[
+	{
+		"id":1,
+		"name":"Nguyen Kha Quy",
+		"email":"khaquy123@gmail.com",
+		"password":"quy123"
+	},
+	{
+		"id":1,
+		"name":"Tran Van Vung",
+		"email":"vungka321@gmail.com",
+		"password":"vung123"
+	},
+	{
+		"id":2,
+		"name":"Hoang Trung Dung",
+		"email":"trungdung123@gmail.com",
+		"password":"trungdung123"
+	}
+]

@@ -1,0 +1,83 @@
+
+<div class="banner-title">
+	<h3 class="text-center banner-title-text">Favorite</h3>
+</div>
+
+
+<!-- =========================================== -->
+<!-- begin content favorite	 -->
+<div class="content">
+	<div class="main-cart">
+		<!-- begin table favorite -->
+		<div class="table-responsive">
+			<h2>List Favorite</h2><br>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th class="th-cart">No</th>
+						<th class="th-cart" style="width: 350px">Name</th>
+						<th class="th-cart">Image</th>
+						<th class="th-cart">Price</th>
+						<th class="th-cart">Sale Price</th>
+						<th class="th-cart">Delete</th>
+						<th class="th-cart"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat = "pro in prodinFavirite">
+						<td class="th-cart">{{pro.id}}</td>
+						<td class="th-cart">{{pro.name}}</td>
+						<td class="th-cart">
+							<img  ng-repeat="pimg in pro.img" src="imgs/products/{{pro.img_folder}}/{{pimg}}.png" alt="" style="width:70px; height:60px;padding: 5px">
+						</td>
+						<td class="th-cart">$ {{pro.sale}}</td>
+						<td class="th-cart">$ {{pro.price}}</td>
+						<td class="th-cart cart-delete">
+							<a href="" target="_self" ng-click = delFavorite(pro)><i class="far fa-trash-alt"></i></a>
+						</td>
+						<td class="th-cart cart-save">
+							<a href="" target="_self"  ng-click = pushFavoritetoCart(pro)><i class=" fas fa-shopping-cart" ></i> Add to cart</a>
+						</td>
+					</tr>
+					
+					
+				</tbody>
+			</table>
+		</div>
+		<!-- end table favorite -->
+		<div class="clearfix"></div>
+		<!-- begin delete favorite -->
+		<div class="button-cart">
+			<a href="" target="_self" ng-click ="clear_Favorites()" class="delete-favorite">Delete favorite</a>
+		</div>
+		<!-- end delete favorite -->
+		<div class="clearfix"></div>
+	</div>
+
+</div>
+<!-- end content cart	 -->
+
+<!-- ============================== -->
+<!-- JS product-quantity -->
+<script type="text/javascript">
+	(function($) {	
+		var CartPlusMinus = $('.cart-plus-minus');
+		CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
+		CartPlusMinus.append('<div class="inc qtybutton">+</div>');
+		$(".qtybutton").on("click", function() {
+			var $button = $(this);
+			var oldValue = $button.parent().find("input").val();
+			if ($button.text() === "+") {
+				var newVal = parseFloat(oldValue) + 1;
+			} else {
+            // Don't allow decrementing below zero
+            if (oldValue > 1) {
+            	var newVal = parseFloat(oldValue) - 1;
+            } else {
+            	newVal = 1;
+            }
+        }
+        $button.parent().find("input").val(newVal);
+    });
+	})(jQuery);
+</script>

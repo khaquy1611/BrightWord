@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+/* Slider */
+
+html {
+    font-size: 20px;
+}
+
+:root {
+    --text-color: #0363cd;
+    --text-span: #7a7a7a;
+}
+
+.product-list {
+    margin-top: 20px;
+    font-weight: 500;
+    color: var(--text-span);
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 25px;
+    padding: 10px 0px 0px 0xp;
+}
+
+.product-list p span {
+    font-size: 1rem;
+}
+
+.box-price {
+    margin-top: 20px;
+}
+
+@media only screen and(max-width:480px) {
+    .ng-scope {
+        width: 100%!important;
+    }
+}
+
+.whisht-list a {
+    text-decoration: none;
+    color: #a5a5a5;
+    font-size: 1rem;
+}
+
+.product-social-sharing ul li {
+    text-align: center;
+    margin-top: 20px;
+    width: 85px;
+    height: 25px;
+    border-radius: 2px;
+    display: inline-block;
+    list-style: none;
+    margin-left: 10px;
+    transition: all linear 0.3s ease-in-out;
+}
+
+.reassurance-item span {
+    margin-left: 20px;
+    font-size: 0.8rem;
+}
+
+.product-social-sharing ul li a {
+    color: #fff;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.li-product-tab ul .middle {
+    padding: 0 20px;
+    border-left: 1px solid #ccc!important;
+    border-right: 1px solid #ccc!important;
+}
+
+.li-product-tab ul li {
+    text-align: center;
+    width: 200px;
+    height: 25px;
+    border-radius: 2px;
+    display: inline-block;
+    list-style: none;
+    margin-left: 10px;
+    transition: all linear 0.3s ease-in-out;
+}
+
+.text-decription-btn {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    border: none;
+    outline: none;
+    background-color: rgb(224, 139, 28);
+}
+
+textarea {
+    margin-top: 20px;
+    resize: none;
+    text-align: center;
+}
+
+.row {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.product-description {
+    display: none;
+}
+
+.li-product-tab {
+    margin-top: 20px;
+}
+
+.li-product-tab ul li a:hover {
+    color: #000;
+}
+
+.li-product-tab ul {
+    text-align: center;
+}
+
+.multiple-items img {
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.li-section-title {
+    margin: 40px;
+    font-size: 0.6rem;
+    font-weight: bold;
+    font-family: Times New Roman
+}
+
+@keyframes border-run {
+    0% {
+        border-bottom: none;
+        width: 100%;
+    }
+    100% {
+        border-bottom: 2px solid rgb(106, 143, 108);
+        width: 100%;
+    }
+}
+
+.li-product-tab ul li a {
+    color: #ccc;
+    font-size: 1rem;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.reassurance-item {
+    padding: 16px 0px;
+    margin-top: 20px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.facebook {
+    background-color: #3c5b9b;
+    margin-left: 0!important;
+}
+
+.twitter {
+    background-color: #40c1df;
+}
+
+.google {
+    background-color: #ed3c32;
+}
+
+.instagram {
+    background-color: #c619b8;
+}
+
+.art-to-cart {
+    margin-left: 20px;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1rem;
+    color: #242424;
+    position: relative;
+    background: #fed700;
+    cursor: pointer;
+    border-radius: 10px!important;
+    font-weight: 700;
+    text-transform: capitalize;
+    padding: 8px 20px;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.fa-heart {
+    color: red;
+    font-size: 1rem;
+}
+
+.art-to-cart:hover {
+    background-color: rgb(179, 114, 77);
+}
+
+label {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.quantity-cart {
+    margin-top: 20px;
+}
+
+.select {
+    width: 20%;
+}
+
+.box-price .price {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 27px;
+    color: #e80f0f;
+}
+
+.slick-slider {
+    position: relative;
+    display: inline;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    position: relative;
+}
+
+.product-details-view-content {
+    text-align: left;
+}
+
+.lg-image img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.product-details-ref {
+    font-size: 13px;
+    color: var(--text-span);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul.rating li {
+    display: inline-block;
+    list-style: none;
+}
+
+ul.rating li .fa-star {
+    font-size: 12px;
+    color: #fed700;
+}
+
+.back-to-top {
+    transition: all 2s linear;
+    animation-name: rotate;
+    animation-duration: 4s;
+    animation-timing-function: 4s;
+    color: #fff;
+    padding: 20px;
+    background-color: rgb(245, 146, 17);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+@keyframes rotate {
+    from {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
+
+.show-back-to-top {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fa-star {
+    font-size: 12px;
+    color: #fed700;
+}
+
+.multiple-items {
+    text-align: justify;
+}
+
+.multiple-items h5 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.multiple-items .title-product {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.multiple-items .price {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.view {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.view a {
+    text-decoration: none;
+    color: #a5a5a5;
+    font-size: 1rem;
+}
+
+.rating-box {
+    padding-top: 20px;
+}
+
+.product-info h2 {
+    color: var(--text-color);
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 50px;
+}
+
+.sm-image img {
+    width: 100%;
+    cursor: pointer;
+}

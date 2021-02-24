@@ -1,0 +1,105 @@
+<div class="content main-checkout main-cart" >
+	<!-- begin checkout left -->
+	<div class="col-md-4">
+		<form action="" method="POST" id="form-order">
+			<h2 class="text-center">Order Content</h2><br>
+		
+			<div class="form-group">
+				<label for="">Name</label>
+				<input type="text" class="form-control" name="name" placeholder="Enter your name...">
+			</div>
+			<div class="form-group">
+				<label for="">Email</label>
+				<input type="email" class="form-control" name="email" placeholder="Enter your email...">
+			</div>
+			<div class="form-group">
+				<label for="">Phone</label>
+				<input type="number" class="form-control" name="phone" placeholder="Enter your phone...">
+			</div>
+			<div class="form-group">
+				<label for="">Adrress</label>
+				<input type="text" class="form-control" name="address" placeholder="Enter your adrress...">
+			</div>
+			<div class="form-group">
+				<label for="">Content</label>
+				<textarea name="content" rows="7" placeholder="Enter your content..."></textarea>
+			</div>
+			<button type="submit" class="btn btn-primary">Order Now</button>
+		</form>
+	</div>
+	<!-- end checkout left -->
+	<!-- begin checkout right -->
+	<div class="col-md-8"><br><br>
+		<h2 class="text-center">List Product Order</h2><br>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th class="th-cart text-center">No</th>
+						<th class="th-cart text-center" style="width: 380px">Name</th>
+						<th class="th-cart text-center">Image</th>
+						<th class="th-cart text-center">Price</th>
+						<th class="th-cart text-center">Quantity</th>
+						<th class="th-cart text-center">Total Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="ca in carts track by $index">
+						<td class="th-cart text-center">{{$index+1}}</td>
+						<td class="th-cart text-center">{{ca.name}}</td>
+						<td class="th-cart text-center">
+							<img ng-src="imgs/products/{{ca.img_folder}}/{{ca.img[0]}}.png" alt="" style="width:70px; height:60px; object-fit: cover;">
+						</td>
+						<td class="th-cart text-center">$ {{ca.price}}</td>
+						<td class="th-cart text-center">{{ca.quantity}}</td>
+						<td class="th-cart text-center">$ {{ca.quantity*ca.price | currency:"":2}}</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+		<p class="pull-right" style="margin:10px 0px;font-size:18px">Total: <span style="font-size:20px; color: #e7ab3c;">$ {{total_money | currency:"":2}}</span></p>
+	</div>
+	<!-- end checkout right -->
+</div>
+
+<div class="clearfix"></div>
+<script type="text/javascript">
+
+	// =====================================================
+	// begin JS validate form order
+	$('#form-order').validate({
+		rules:{
+			name:{
+				required:true
+			},
+			email:{
+				required:true
+			},
+			phone:{
+				required:true
+			},
+			address:{
+				required: true
+			}
+		},
+		messages:{
+			name:{
+				required:"This field is required"
+			},
+			email:{
+				required:"This field is required",
+				email:"Incorrect email format ( demo@gmail.com )"
+			},
+			phone:{
+				required:"This field is required"
+			},
+			address:{
+				required:"This field is required"
+			}
+		}
+	});
+	// end JS validate form order
+	</script>
+
+

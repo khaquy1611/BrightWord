@@ -1,0 +1,20 @@
+[
+	{
+		"id":1,"name":"LED Strip Light"
+	},
+	{
+		"id":2,"name":"LED Spotlight"
+	},
+	{
+		"id":3,"name":"LED Panel Light"
+	},
+	{
+		"id":4,"name":"LED Table Lamp"
+	},
+	{
+		"id":5,"name":"LED Tube"
+	},
+	{
+		"id":6,"name":"LED Down Light"
+	}
+]

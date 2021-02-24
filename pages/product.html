@@ -1,0 +1,299 @@
+<!-- begin banner Product	 -->
+<div class="banner-title">
+    <h3 class="text-center banner-title-text">Product</h3>
+</div>
+<!-- end banner Product -->
+
+<div class="content">
+    <div class="btn-open-left-side-pro"><i class="fas fa-align-justify"></i></div>
+</div>
+<div class="content product-page">
+    <div class="col-md-3 left-side-product" style="padding-left	: 0; background:#fff;">
+        <i class="fas fa-times" id="close-ca-pro"></i>
+        <div class="main-blog">
+
+            <!-- begin search product -->
+            <div class="item-blog-right">
+                <form action="" method="POST" role="form">
+                    <input type="text" name="name" placeholder="Enter key words..." ng-model="search">
+                    <button type="submit" class=""><span class="glyphicon glyphicon-search"></span></button>
+                </form>
+            </div> 
+            <!-- end search product -->
+
+            <!-- begin category product -->
+            <div class="item-blog-right">
+                <h2>Category</h2>
+                <ul>
+                    <li ng-class="isCat.id==cat.id?'active-nav-left':''" ng-click="getProByCatId(cat.id)" ng-repeat="cat in cate"><a href=""><span>{{cat.name}}</span></a></li>
+                </ul>
+            </div>
+            <!-- end category product -->
+
+            <!-- begin Tags product -->
+            <div class="item-blog-right">
+                <h2>Tags</h2>
+                <div class="tag">
+                    <a href=""><span>Light LED</span></a>
+                    <a href=""><span>Led Track Lights</span></a>
+                    <a href=""><span>Light LED</span></a>
+                    <a href=""><span>Light LED</span></a>
+                    <a href=""><span>Light LED</span></a>
+                </div>
+            </div>
+            <div class="item-blog-right">
+                <h2>Recent Product</h2>
+                <div class="media">
+                    <div class="media-left media-top">
+                        <img src="imgs/products/sp1/1.png" class="media-object" width="80px">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="#!product_detail">F48t12 Fluorescent Tube Replacement T8 LED Retrofit Tube</a></h4>
+                        <p><span style="text-decoration: line-through">$ 0.7</span>   <span style="color:red; font-weight:bold">$0.53</span></p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left media-top">
+                        <img src="imgs/products/sp2/3.png" class="media-object" width="80px">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="#!product_detail">40-80W Integrated All-in-One Outdoor Solar LED Street Garden Light</a></h4>
+                        <p><span style="text-decoration: line-through">$ 180</span>   <span style="color:red; font-weight:bold">$ 170.5</span></p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left media-top">
+                        <img src="imgs/products/sp4/1.png" class="media-object" width="80px">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="#!product_detail">Outdoor Garden Road 30W 60W 90W 120W LED Solar Street Light</a></h4>
+                        <p><span style="text-decoration: line-through">$ 500</span>   <span style="color:red; font-weight:bold">$ 300</span></p>
+                    </div>
+                </div>
+            </div>
+            <!-- end Tags product -->
+
+
+        </div>
+    </div>
+    <div class="col-md-9" style="padding-right: 0">
+        <div class="product-content">
+            <nav class="clearfix" style="background-color: #f0f1f2;margin: 0 10px 20px 10px;">
+                <ul class="nav-pro-page-select-view" style="">
+                    <li class="active">
+                        <a title="LIST VIEW" class="pro-page-list"><i class="fa fa-th-list" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a title="GALLERY VIEW" class="pro-page-gallery"><i class="fa fa-th" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="active">
+                        <select ng-model="price_order" class="form-control">
+                           <option value="">Sort prices incrementally</option>
+                           <option value="1">Sort Prices Descending</option>
+                       </select>
+                   </li>
+
+               </ul>
+           </nav>
+
+           <div class="gallary-view">
+
+            <div class="col-xs-12 col-sm-4 col-md-4 product-padding" ng-repeat="p in pro | filter:{name:search} | orderBy:'price':price_order">
+                <div class="item-product">
+                    <a href="#!product_detail" >
+                        <div class="thumbnail">
+                            <div id="gallary-pro-{{$index}}" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+
+                                    <div class="item active" ng-repeat="img in p.img[0]" style="width: 100%">
+                                        <img ng-src="imgs/products/{{p.img_folder}}/{{img}}.png" class="product-img img-responsive" style="margin: 0 auto" alt="">
+                                    </div>
+                                    <div class="item" ng-repeat="img in p.img" ng-if="img != p.img[0]">
+                                        <img ng-src="imgs/products/{{p.img_folder}}/{{img}}.png" class="product-img img-responsive" style="margin: 0 auto" alt="">
+                                        <p></p>
+                                    </div>
+
+                                </div>
+                                <a class="left carousel-control" href="#gallary-pro-{{$index}}" target="_self" data-slide="prev"><span class="glyphicon glyphicon-chevron-left arrows-left"></span></a>
+                                <a class="right carousel-control" href="#gallary-pro-{{$index}}" target="_self" data-slide="next"><span class="glyphicon glyphicon-chevron-right arrows-right"></span></a>
+                            </div>
+                            <div class="btn-group pro_btn" style="">
+                                <a class="glyphicon glyphicon-heart"  ng-if="!check_inFavorite(p.id)"
+                                class="btn btn-xs btn-danger" ng-click="pushFavorite(p)" title="WISH LIST" href="" target="_self" role="a"></a>    
+
+                                <a class="glyphicon glyphicon-heart"  ng-if="check_inFavorite(p.id)"
+                                class="btn btn-xs btn-danger" style="cursor: not-allowed" title="PRODUCT HAD IN YOUR WISH LIST" href="" target="_self" role="a"></a>
+                                <a class="glyphicon glyphicon-eye-open" title="VIEW" href="" ng-click="xem(p)" role=""></a>
+                                <a class="glyphicon glyphicon-shopping-cart" title="CART" href="" ng-click="add_to_cart(p)" role="button"></a>
+                                <a class="glyphicon glyphicon-save" title="DOWLOAD DETAIL" href="download/prodetail.docx" download role="button"></a>
+                                <a class="glyphicon glyphicon-envelope" title="CONTTACT US NOW" href="mailto:hoangtrungdungxz@gmail.com" role="button"></a>
+                            </div>
+
+                            <hr>
+                            <div class=" caption">
+                                <a href="#!product_detail" style="text-decoration: none;"><p class="product-caption">{{p.name}}</p></a>
+                                <p class="price">$ {{p.sale}} </p>
+                                <p class="sale_price">$ {{p.price}}</p>
+                            </div>
+
+                        </div>
+                    </a>
+                    <a href="#!product_detail">
+                        <div class="product-content-hide">
+                            <div class="product-content-hide-in">
+                                <p class="p">Light Source: <strong>{{p.source}}</strong></p>
+                                <p class="p">Light Type: <strong>{{p.type}}</strong></p>
+                                <p class="p">Power: <strong>{{p.power}}</strong> </p>
+                                <p class="p">Lamp Body Material: <strong>{{p.material}}</strong> </p>
+                                <p class="p">Color Temperature: <strong>{{p.color}}</strong></p>
+                                <p class="p">5WTechnics: <strong>{{p.technics}}</strong></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="list-view hide">
+
+            <div class="container-fluid" ng-repeat="p in pro | filter:{name:search} | orderBy:'price':price_order" style="margin-top:20px">
+                <div class="col-md-4 pro-carosel">
+                    <div id="list-pro-{{$index}}" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+
+                            <div class="item active" ng-repeat="img in p.img[0]" style="width: 100%">
+                                <img ng-src="imgs/products/{{p.img_folder}}/{{img}}.png" class="product-img img-responsive" style="margin: 0 auto" alt="">
+                            </div>
+                            <div class="item" ng-repeat="img in p.img" ng-if="img != p.img[0]">
+                                <img ng-src="imgs/products/{{p.img_folder}}/{{img}}.png" class="product-img img-responsive" style="margin: 0 auto" alt="">
+                                <p></p>
+                            </div>
+
+                        </div>
+                        <a class="left carousel-control" href="#list-pro-{{$index}}" target="_self" data-slide="prev"><span class="glyphicon glyphicon-chevron-left arrows-left"></span></a>
+                        <a class="right carousel-control" href="#list-pro-{{$index}}" target="_self" data-slide="next"><span class="glyphicon glyphicon-chevron-right arrows-right"></span></a>
+                    </div>
+                </div>
+                <div class="col-md-8 list-view-right" style="margin-top:20px">
+                    <div class="name-product">
+                        <a href="#!product_detail">{{p.name}}</a>
+                    </div>
+                    <div class="" style="margin-top:20px">
+                        <ul>
+                            <li>Sale Price: <s><span>$ {{p.sale}}</s></span>
+                            </li>
+                            <li>Price: <span style="color:red">$ {{p.price}}</span></li>
+                        </ul>
+                    </div>
+                    <div class="container-fuild" style="overflow: hidden">
+                        <div class="col-md-6 col-xs-6" style="padding:0">
+                            <ul>
+                                <li>Light Source: <span>{{p.source}}</span></li>
+                                <li>Light Type: <span>{{p.type}}</span></li>
+                                <li>Power: <span>{{p.power}}</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-xs-6" style="padding:0">
+                            <ul>
+                                <li>Lamp Body Material: <span>{{p.material}}</span></li>
+                                <li>Color Temperature: <span>{{p.color}}</span></li>
+                                <li>Technics: <span>{{p.technics}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="border-top: 1px dashed #dae0e5;">
+                        <div class="brand-product-page" style="margin-top: 10px;">
+                            <ul>
+                                <li>{{p.brand}}</li>
+                                <li><img src="image/icon-product/diamond.png" alt=""></li>
+                                <li><img src="image/icon-product/as-audited.png" alt=""></li>
+                                <li><img src="image/icon-product/360.png" alt=""></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-12 list-view-right-icon">
+
+                         <ul>
+                            <li class="description">
+                                <a class="glyphicon glyphicon-heart"  ng-if="!check_inFavorite(p.id)"
+                                class="btn btn-xs btn-danger" ng-click="pushFavorite(p)" title="WISH LIST" href="" target="_self" role="a"></a>    
+                                <a class="glyphicon glyphicon-heart"  ng-if="check_inFavorite(p.id)"
+                                class="btn btn-xs btn-danger" style="cursor: not-allowed" title="PRODUCT HAD IN YOUR WISH LIST" href="" target="_self" role="a"></a>
+                            </li>
+                            <li class="description">
+                                <a class="glyphicon glyphicon-eye-open" title="VIEW" href="" ng-click="xem(p)" role="button"></a>
+                            </li>
+                            <li class="description">
+                                <a class="glyphicon glyphicon-shopping-cart" title="CART" href=""  ng-click="add_to_cart(p)"
+                                role="button"></a>
+                            </li>
+                            <li class="description">
+                                <a class="glyphicon glyphicon-save" title="DOWLOAD DETAIL" href="download/prodetail.docx" download
+                                role="button"></a>
+                            </li>
+                            <li class="description">
+                                <a class="glyphicon glyphicon-envelope" title="CONTTACT US NOW"
+                                href="mailto:vungka321@gmail.com" role="button"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<!-- begin pagination -->
+
+<div class="pagination-css">
+    <ul class="pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+</div>
+<!-- end pagination -->
+</div>
+</div>
+
+<div class="clearfix">
+
+
+
+</div>
+<script>
+    // function Make span filter
+
+
+    $('.btn-open-left-side-pro').click(function(event) {
+        $('.left-side-product').css('transform', 'translateX(0)');
+        $('.left-side-product').css('opacity', '1');
+    });
+    // open filer end here
+
+    // close filer
+
+    $('#close-ca-pro').click(function(event) {
+        $('.left-side-product').css('transform', 'translateX(-300px)');
+        $('.left-side-product').css('opacity', '0');
+    });
+    // close filer end here
+
+
+
+
+
+    // CHANGE SELECT VIEW
+    $('.pro-page-list').click(function(event) {
+        $('.gallary-view').attr('class', 'gallary-view hide');
+        $('.list-view').attr('class', 'list-view show');
+    });
+    $('.pro-page-gallery').click(function(event) {
+        $('.gallary-view').attr('class', 'gallary-view show');
+        $('.list-view').attr('class', 'list-view hide');
+    });
+</script>

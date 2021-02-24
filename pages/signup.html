@@ -1,0 +1,105 @@
+<div class="content">
+	<div class="container-fluid">
+		<div class="col-md-4 col-md-offset-4 form-registration content-login">
+			<!-- begin form registration -->
+			<div>
+				<h2 class="text-center" style="font-family:'Times New Roman'; font-size:22px"><b class="b-text-login">Sign Up</b></h2>
+				<form action="login.html" method="POST" role="form" id="form-registration">
+					<div class="form-group form-group1">
+						<label for="">Name</label>
+						<input type="text" class="form-control form-input1" name="name" placeholder="Enter your name">
+
+					</div>
+					<div class="form-group form-group1">
+						<label for="">Email</label>
+						<input type="email" class="form-control form-input1" name="email" placeholder="Enter your email">
+
+					</div>
+					<div class="form-group form-group1">
+						<label for="">Phone</label>
+						<input type="number" class="form-control form-input1" name="phone" placeholder="Enter your phone">
+
+					</div>
+
+					<div class="form-group form-group1">
+						<label for="">Password</label>
+						<input type="password" class="form-control form-input1" name="password" placeholder="Enter your password">
+
+					</div>
+					<div class="form-group form-group1">
+						<label for="">Confirm Password</label>
+						<input type="password" class="form-control form-input1" name="passwordxs" placeholder="Confirm Password">
+					</div>	
+
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="checkbox" value="1" checked>  I agree to the <a href="#">Terms and Conditions</a>
+						</label>
+					</div>
+
+					<div class="registration_send text-center">
+						<button type="submit" class="btn">Registration Now</button>
+					</div>
+				</form>
+				<!-- end form registration -->
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+
+	// =====================================================
+// begin JS validate form registration
+$.validator.addMethod('is_password',function(value, elm){
+	var password_rgx = /^[a-zA-Z0-9]{3,50}$/;
+	return password_rgx.test(value);
+},'');
+$.validator.addMethod('is_passwordxs',function(value, elm){
+	var passwordxs_rgx = /^[a-zA-Z0-9]{3,50}$/;
+	return passwordxs_rgx.test(value);
+},'');
+$('#form-registration').validate({
+	rules:{
+		name:{
+			required:true
+		},
+		email:{
+			required:true
+		},
+		phone:{
+			required:true
+		},
+		password:{
+			required: true,
+			is_password:true
+		},
+		passwordxs:{
+			required: true,
+			is_passwordxs:true
+		}
+	},
+	messages:{
+		name:{
+			required:"This field is required"
+		},
+		email:{
+			required:"This field is required",
+			email:"Incorrect email format (Eg: demo@gmail.com )"
+		},
+		phone:{
+			required:"This field is required"
+		},
+		password:{
+			required:"This field is required",
+			is_password:"Password does not contain special characters"
+		},
+		passwordxs:{
+			required:"This field is required",
+			is_passwordxs:"Password re-enter wrong"
+		}
+	}
+});
+
+// end JS validate form registration
+</script>

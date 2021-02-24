@@ -1,0 +1,109 @@
+<!-- begin banner cart	 -->
+<div class="banner-title">
+	<h3 class="text-center banner-title-text">Cart</h3>
+</div>
+<!-- end banner cart -->
+
+
+<!-- =========================================== -->
+<!-- begin content cart	 -->
+<div class="content">
+	<div class="main-cart" ng-if="carts.length">
+		<!-- begin table cart --> 
+		<div class="table-responsive" >
+			<h2>List Cart</h2><br>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th class="th-cart">No</th>
+						<th class="th-cart" style="width: 400px">Name</th>
+						<th class="th-cart">Image</th>
+						<th class="th-cart">Price</th>
+						<th class="th-cart">Sale Price</th>
+						<th class="th-cart">Quantity</th>
+						<th class="th-cart">Total Price</th>
+						<th class="th-cart">Edit</th>
+						<th class="th-cart">Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="ca in carts track by $index">
+						<td class="th-cart">{{$index+1}}</td>
+						<td class="th-cart">{{ca.name}}</td>
+						<td class="th-cart">
+							<img ng-src="imgs/products/{{ca.img_folder}}/{{ca.img[0]}}.png" alt="" style="width:70px; height:60px; object-fit: cover;">
+						</td>
+						<td class="th-cart">$ {{ca.price}}</td>
+						<td class="th-cart">$ {{ca.sale}}</td>
+						<td class="th-cart">
+							<form>                    	
+								<div class="product-quantity">
+									<div class="cart-plus-minus"><div class="dec qtybutton">-</div>
+									<input class="cart-plus-minus-box" type="text" name="quantity" value="{{ca.quantity}}">
+									<div class="inc qtybutton">+</div></div>
+								</div>
+							</form>
+						</td>
+						<td class="th-cart">$ {{ca.quantity*ca.price | currency:"":2}}</td>
+						<td class="th-cart cart-save">
+							<a href=""><i class="fas fa-save"></i></a>
+						</td>
+						<td class="th-cart cart-delete">
+							<a href="" ng-click="remove_cart(ca.id)"><i class="far fa-trash-alt"></i></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- end table cart -->
+
+		<div class="clearfix"></div>
+		<!-- begin delete && checkout cart -->
+		<div class="button-cart">
+			<a href="" class="delete" ng-click="clear_cart()">Delete Cart</a>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-lg-8"></div>
+		<div class="col-lg-4">
+			<div class="proceed-checkout">
+				<ul>
+					<li class="subtotal">Total Quantity <span>{{total_qtt}}</span></li>
+					<li class="cart-total">Total Price<span>$ {{total_money | currency:"":2}}</span></li>
+				</ul>
+				<a href="#!checkout" class="proceed-btn">PROCEED TO CHECK OUT</a>
+			</div>
+		</div>
+		
+		<!-- end delete && checkout cart -->
+		<div class="clearfix"></div>
+	</div>
+	<div class="text-center" ng-if="!carts.length" style="margin-top:50px">
+		Giỏ hàng rỗng
+	</div>
+</div>
+<!-- end content cart	 -->
+
+<!-- ============================== -->
+<!-- JS product-quantity -->
+<script type="text/javascript">
+	(function($) {	
+		var CartPlusMinus = $('.cart-plus-minus');
+		CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
+		CartPlusMinus.append('<div class="inc qtybutton">+</div>');
+		$(".qtybutton").on("click", function() {
+			var $button = $(this);
+			var oldValue = $button.parent().find("input").val();
+			if ($button.text() === "+") {
+				var newVal = parseFloat(oldValue) + 1;
+			} else {
+            // Don't allow decrementing below zero
+            if (oldValue > 1) {
+            	var newVal = parseFloat(oldValue) - 1;
+            } else {
+            	newVal = 1;
+            }
+        }
+        $button.parent().find("input").val(newVal);
+    });
+	})(jQuery);
+</script>

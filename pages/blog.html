@@ -1,0 +1,113 @@
+
+<div class="banner-title">
+	<h3 class="text-center banner-title-text">Blogs</h3>
+</div>
+
+
+
+<!-- =========================================== -->
+<!-- begin content blog	 -->
+<div class="content"> 
+	<main class="main-blog">
+		
+		<div class="container-fluid">
+			<!-- begin blog left -->
+			<div class="col-md-9">
+				<div class="item-blog-left" ng-repeat="og in blo | filter:{name:search_blog}">
+					<div class="image-blog">
+						<a href="#!blog-detail"><img ng-src="{{og.image}}" alt=""></a>
+						<div class="icon-blog">
+							<ul>
+								<li><span><i class="fa fa-eye"></i>5K</span></li>
+								<li><span><i class="fa fa-thumbs-up"></i>151</span></li>
+								<li><span><i class="fa fa-comment"></i>30</span></li>
+								<li><span><i class="glyphicon glyphicon-time"></i>{{og.date}}</span></li>
+							</ul> 
+						</div>
+					</div>						
+					<div class="content-blog">
+						<p><a href="#!blog-detail">{{og.name}}</a></p>
+						<p>{{og.content}}</p>
+					</div>
+					<div class="read-blog">
+						<p class="pull-left read"><a href="#!blog-detail"><span>Read more</span><i class="glyphicon glyphicon-arrow-right"></i></a></p>
+						<p class="pull-right">By: {{og.by}}</p>
+					</div>
+				</div>
+
+				<!-- begin pagination -->
+
+				<div class="pagination-css">
+					<ul class="pagination">
+						<li><a href="#">&laquo;</a></li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">&raquo;</a></li>
+					</ul>
+				</div>
+				<!-- end pagination -->
+			</div>
+			<!-- end blog left -->
+
+			<!-- begin blog right -->
+			<div class="col-md-3">
+
+				<!-- begin search blog -->
+				<div class="item-blog-right">						
+					<form action="" method="POST" role="form">
+						<input type="text" name="name" placeholder="Enter key words..." ng-model="search_blog">
+						<button type="submit" class=""><span class="glyphicon glyphicon-search"></span></button>	
+					</form>
+				</div>
+				<!-- end search blog -->
+
+				<!-- begin category blog -->
+				<div class="item-blog-right">
+					<h2>Category Blog</h2>
+					<ul>
+						<li ng-class="isBlog.id==b.id?'active-nav-left':''" ng-click="getBlogById(b.id)" ng-repeat="b in blg"><a href=""><span>{{b.name}}</span></a></li>
+					</ul>
+				</div>
+				<!-- end category blog -->
+
+				<!-- begin Archive blog -->
+				<div class="item-blog-right">
+					<h2>Archive</h2>
+					<ul>
+						<li ng-click="getBlogByDate()"><a href="">May 2020<span class="pull-right">(3)</span></a></li>
+					</ul>
+				</div>
+				<!-- end Archive blog -->
+
+				<!-- begin Tags blog -->
+				<div class="item-blog-right">
+					<h2>Tags</h2>
+					<div class="tag">							
+						<a href=""><span>Design</span></a>
+						<a href=""><span>Decorative Tips</span></a>
+						<a href=""><span> Blog Light LED</span></a>
+						<a href=""><span>Light LED</span></a>							
+					</div>
+				</div>
+				<div class="item-blog-right">
+					<h2>Recent Post</h2>
+					<div class="media" ng-repeat="o in blghome">
+						<div class="media-left media-top">
+							<img ng-src="{{o.image}}" class="media-object" width="80px">
+						</div>
+						<div class="media-body">
+							<h4 class="media-heading"><a href="#!blog-detail">{{o.name}}</a></h4>
+							<p>{{o.date}}</p>
+						</div>
+					</div>
+				</div>
+				<!-- end Tags blog -->
+			</div>
+			<!-- end blog right -->
+		</div>
+
+	</main>
+</div>
+	<!-- end content blog	 -->
